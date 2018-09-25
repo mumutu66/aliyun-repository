@@ -9,5 +9,6 @@ RUN apk add --no-cache \
     musl-dev \
     libffi-dev \
     openssl-dev \
+    nasm \
     git
 RUN pip install pymysql pyyaml && npm install -g cnpm
