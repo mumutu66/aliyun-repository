@@ -12,5 +12,5 @@ RUN apk add --no-cache \
     nasm \
     git
 RUN pip install pymysql pyyaml && npm install -g cnpm
-RUN wget -O /usr/local/sass-binding https://github.com/sass/node-sass/releases/download/v4.9.3/linux-x64-57_binding.node
+RUN curl -o /usr/local/sass-binding  -L https://github.com/sass/node-sass/releases/download/v4.9.3/linux-x64-57_binding.node
 RUN export SASS_BINARY_PATH=/usr/local/sass-binding
