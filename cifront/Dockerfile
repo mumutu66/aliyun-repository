@@ -1,5 +1,5 @@
 FROM node:8.11.4-alpine
-RUN apk add --no-cache \
+RUN apk add --update --no-cache \
     bash \
     curl \
     python2 \
@@ -10,7 +10,10 @@ RUN apk add --no-cache \
     libffi-dev \
     openssl-dev \
     nasm \
-    libpng-devel \
+    autoconf \
+    automake \
+    lcms2-dev \
+    libpng-dev \
     git
 RUN pip install pymysql pyyaml && npm install -g cnpm
 RUN curl -o /usr/local/sass-binding  -L https://github.com/sass/node-sass/releases/download/v4.9.3/linux-x64-57_binding.node
