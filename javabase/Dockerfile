@@ -12,4 +12,4 @@ RUN apk add --no-cache \
 RUN cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 COPY jacocoagent.jar /jacocoagent.jar
 COPY pre-stop.sh /pre-stop.sh
-CMD chmod +x /pre-stop.sh
+RUN chmod +x /pre-stop.sh
