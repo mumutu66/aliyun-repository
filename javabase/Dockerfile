@@ -6,7 +6,10 @@ RUN apk add --no-cache \
     tree \
     tzdata \
     openjdk8-jre \
+    maven \
     ttf-droid
 # Modify timezone
 RUN cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 COPY jacocoagent.jar /jacocoagent.jar
+COPY pre-stop.sh /pre-stop.sh
+CMD chmod +x /pre-stop.sh
