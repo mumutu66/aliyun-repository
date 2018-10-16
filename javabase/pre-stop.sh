@@ -1,1 +1,0 @@
-mvn sonar:sonar -Dsonar.host.url=${REPORT_SONAR_URL} -Dsonar.token=${REPORT_SONAR_TOKEN} -Dsonar.jacoco.reportPath=${REPORT_URL}/jacoco.exec -Dsonar.projectjectKey=${REPORT_SERVICE_NAME} -Dsonar.dynamicAnalysalysis
