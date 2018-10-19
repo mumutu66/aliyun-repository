@@ -15,7 +15,8 @@ RUN apk add --update --no-cache \
     lcms2-dev \
     libpng-dev \
     libtool \
+    tar \
     git
 RUN pip install pymysql pyyaml && npm install -g cnpm
-RUN curl -o /usr/local/sass-binding  -L https://github.com/sass/node-sass/releases/download/v4.9.3/linux-x64-57_binding.node
-RUN export SASS_BINARY_PATH=/usr/local/sass-binding
+#RUN curl -o /usr/local/sass-binding  -L https://github.com/sass/node-sass/releases/download/v4.9.3/linux-x64-57_binding.node
+#RUN export SASS_BINARY_PATH=/usr/local/sass-binding
