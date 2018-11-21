@@ -16,11 +16,11 @@ RUN apk --no-cache add \
 WORKDIR /tmp
 
 ENV ANT_VERSION=1.10.2
-ENV ANT_HOME=/usr/share
+ENV ANT_HOME=/usr/share/ant
 
 RUN wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /opt/ \
-    && ln -s /opt/apache-ant-${ANT_VERSION} /opt/ant \
+    && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /usr/share/ \
+    && ln -s /usr/share/apache-ant-${ANT_VERSION} /usr/share/ant \
     && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz \
 
 RUN wget -O /usr/bin/yq \
