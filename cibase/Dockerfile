@@ -15,6 +15,9 @@ RUN apk --no-cache add \
 # install ant
 WORKDIR /tmp
 
+ENV ANT_VERSION=1.10.2
+ENV ANT_HOME=/opt/ant
+
 RUN wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
     && wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz.md5 \
     && echo "$(cat apache-ant-${ANT_VERSION}-bin.tar.gz.md5) apache-ant-${ANT_VERSION}-bin.tar.gz" | md5sum -c \
