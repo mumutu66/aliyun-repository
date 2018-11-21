@@ -23,11 +23,13 @@ RUN wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-b
     && ln -s /usr/share/apache-ant-${ANT_VERSION} /usr/share/ant \
     && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz
 
+WORKDIR /root
+
 RUN wget -O /usr/bin/yq \
     "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64" && \
     chmod +x /usr/bin/yq  && \
     wget "https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz" && \
-    tar xzf "helm-${HELM_VERSION}-linux-amd64.tar.gz" -C tmp && \
+    tar xzf "helm-${HELM_VERSION}-linux-amd64.tar.gz" -C /tmp && \
     rm -r "helm-${HELM_VERSION}-linux-amd64.tar.gz" && \
     mv /tmp/linux-amd64/helm /usr/bin/helm && \
     helm init -c && \
