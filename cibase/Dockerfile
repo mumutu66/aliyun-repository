@@ -21,7 +21,7 @@ ENV ANT_HOME=/usr/share/ant
 RUN wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
     && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /usr/share/ >> /dev/null \
     && ln -s /usr/share/apache-ant-${ANT_VERSION} /usr/share/ant \
-    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz
+    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz \
     && ln -s /usr/share/ant/bin/ant /usr/bin/ant
 
 
