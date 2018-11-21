@@ -19,14 +19,9 @@ ENV ANT_VERSION=1.10.2
 ENV ANT_HOME=/opt/ant
 
 RUN wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz.md5 \
-    && echo "$(cat apache-ant-${ANT_VERSION}-bin.tar.gz.md5) apache-ant-${ANT_VERSION}-bin.tar.gz" | md5sum -c \
     && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /opt/ \
     && ln -s /opt/apache-ant-${ANT_VERSION} /opt/ant \
     && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz.md5
-
-
 
 RUN wget -O /usr/bin/yq \
     "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64" && \
