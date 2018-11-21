@@ -1,5 +1,6 @@
-FROM frekele/ant:1.10.3-jdk8
-LABEL Dockerfile = "https://github.com/choerodon/cibase.git"
+FROM maven:3.5.2-jdk-8-alpine
+
+
 ENV HELM_VERSION="v2.8.2" \
     YQ_VERSION="2.1.1"
 RUN apk --no-cache add \
@@ -10,6 +11,20 @@ RUN apk --no-cache add \
     ca-certificates \
     openssh \
     jq
+
+# install ant
+WORKDIR /tmp
+
+RUN wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
+    && wget http://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz.md5 \
+    && echo "$(cat apache-ant-${ANT_VERSION}-bin.tar.gz.md5) apache-ant-${ANT_VERSION}-bin.tar.gz" | md5sum -c \
+    && tar -zvxf apache-ant-${ANT_VERSION}-bin.tar.gz -C /opt/ \
+    && ln -s /opt/apache-ant-${ANT_VERSION} /opt/ant \
+    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz \
+    && rm -f apache-ant-${ANT_VERSION}-bin.tar.gz.md5
+
+
+
 RUN wget -O /usr/bin/yq \
     "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64" && \
     chmod +x /usr/bin/yq  && \
