@@ -1,0 +1,1 @@
+FROM katalonstudio/katalon:6.1.2
