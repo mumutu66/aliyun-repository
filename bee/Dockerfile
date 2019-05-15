@@ -7,5 +7,5 @@ RUN yum install nodejs -y
 RUN npm install -g pm2
 RUN curl -O https://rpmfind.net/linux/centos/6.10/os/x86_64/Packages/libgcj-4.4.7-23.el6.x86_64.rpm
 RUN rpm -hvi libgcj-4.4.7-23.el6.x86_64.rpm --nodeps
-RUN curl -O https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk-2.02-1.x86_64.rpm
-RUN rpm -hvi pdftk-2.02-1.x86_64.rpm
+RUN curl -O https://www.linuxglobal.com/static/blog/pdftk-2.02-1.el7.x86_64.rpm
+RUN rpm -hvi pdftk-2.02-1.el7.x86_64.rpm
