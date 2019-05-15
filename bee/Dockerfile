@@ -5,7 +5,7 @@ RUN curl -O https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noar
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 RUN yum install nodejs -y
 RUN npm install -g pm2
-RUN curl -O https://rpmfind.net/linux/RPM/centos/6.10/x86_64/Packages/libgcj-4.4.7-23.el6.x86_64.html
+RUN curl -O https://rpmfind.net/linux/centos/6.10/os/x86_64/Packages/libgcj-4.4.7-23.el6.x86_64.rpm
 RUN rpm -hvi libgcj-4.4.7-23.el6.x86_64.rpm --nodeps
 RUN curl -O https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk-2.02-1.x86_64.rpm
 RUN rpm -hvi pdftk-2.02-1.x86_64.rpm
