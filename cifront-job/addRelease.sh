@@ -20,7 +20,7 @@ assets="["
 for index in ${!fileList[@]}
 do
   str=${fileList[$index]}
-  assets+="\""`echo "$str"|cut -c$prefixSize-${#str}`"\""
+  assets+="\\\""`echo "$str"|cut -c$prefixSize-${#str}`"\\\""
   fileListLenS=$((fileListLen-1))
   if [ $index -ne $fileListLenS ];then
     assets+=","
