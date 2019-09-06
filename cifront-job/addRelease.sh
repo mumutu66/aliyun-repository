@@ -36,4 +36,6 @@ val_WORKER_PLATFORM_URL=`eval echo '$'WORKER_PLATFORM_URL_${D_ENV}`
 
 echo "URL:${val_WORKER_PLATFORM_URL}"
 
-curl -d '{"code":"'${RELEASE_NAME}'","assetsPath":"'${SUB_PATH}'","assets":"'${assets}'","status": 2, "version":"'${CHART_VERSION}'"}' -H "Content-Type: application/json" -X POST  ${val_WORKER_PLATFORM_URL}
+VISIT_URL=${SUB_PATH}${BEAR_SUB_PATH}
+
+curl -d '{"code":"'${RELEASE_NAME}'","assetsPath":"'${VISIT_URL}'","assets":"'${assets}'","status": 2, "version":"'${CHART_VERSION}'"}' -H "Content-Type: application/json" -X POST  ${val_WORKER_PLATFORM_URL}
