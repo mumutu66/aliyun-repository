@@ -5,7 +5,7 @@ RUN cd nginx-1.16.0/patch && wget https://raw.githubusercontent.com/chobits/ngx_
 WORKDIR nginx-1.16.0
 RUN patch -p1 < patch/proxy_connect_rewrite_101504.patch
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zlib1g-dev
-RUN DEBIAN_FRONTEND=noninteractive apt-get install libpcre3 libpcre3-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libpcre3 libpcre3-dev
 RUN ./configure --prefix=/opt/nginx --with-http_ssl_module --with-http_gzip_static_module --http-client-body-temp-path=/opt/nginx/tmp/client/ --http-proxy-temp-path=/opt/nginx/tmp/proxy/ --http-fastcgi-temp-path=/opt/nginx/tmp/fcgi/ --with-poll_module --with-file-aio --with-http_realip_module --with-http_addition_module --with-http_addition_module --with-http_random_index_module --with-http_stub_status_module --http-uwsgi-temp-path=/opt/nginx/uwsgi_temp --http-scgi-temp-path=/opt/nginx/scgi_temp --with-stream --with-stream_ssl_preread_module --add-module=patch/ngx_http_proxy_connect_module --with-http_sub_module
 RUN mkdir -p /opt/nginx/tmp
 RUN make && make install
