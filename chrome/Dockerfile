@@ -1,0 +1,1 @@
+FROM markhobson/maven-chrome
