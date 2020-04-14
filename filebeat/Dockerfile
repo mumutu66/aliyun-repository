@@ -1,0 +1,1 @@
+FROM elastic/filebeat:6.8.5
