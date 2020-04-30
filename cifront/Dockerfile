@@ -1,4 +1,4 @@
-FROM node:10.11.0-alpine
+FROM node:14.0.0-alpine3.10
 RUN apk add --update --no-cache \
     bash \
     curl \
