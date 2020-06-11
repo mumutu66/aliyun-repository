@@ -1,2 +1,10 @@
-FROM mikesir87/aws-cli
-RUN apk -uv add --no-cache git
+FROM python:alpine
+
+ARG CLI_VERSION=1.18.76
+
+RUN apk -uv add --no-cache groff jq less git && \
+    pip install --no-cache-dir awscli==$CLI_VERSION
+
+WORKDIR /aws
+
+CMD sh
