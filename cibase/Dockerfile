@@ -9,6 +9,7 @@ RUN apk --no-cache add \
     openssl \
     ca-certificates \
     openssh \
+    git \
     jq 
 
 # install ant
