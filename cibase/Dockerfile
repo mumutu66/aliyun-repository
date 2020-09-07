@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-11
+FROM maven:3.5.2-jdk-8-alpine
 
 
 ENV HELM_VERSION="v2.8.2" \
@@ -10,7 +10,8 @@ RUN apk --no-cache add \
     openssl \
     ca-certificates \
     openssh \
-    jq
+    jq \
+    openjdk11
 
 # install ant
 WORKDIR /tmp
