@@ -10,8 +10,8 @@ RUN apk --no-cache add \
     openssl \
     ca-certificates \
     openssh \
-    jq \
-    openjdk11
+    jq 
+RUN apk add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community 
 
 # install ant
 WORKDIR /tmp
