@@ -12,6 +12,7 @@ RUN apk --no-cache add \
     git \
     jq \
     python3 \
+    gcc \
     py3-pip \
     && pip3 install --no-cache-dir \
     docker-compose
