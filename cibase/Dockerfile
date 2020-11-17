@@ -37,6 +37,7 @@ RUN wget -O /usr/bin/yq \
     mv /tmp/linux-amd64/helm /usr/bin/helm && \
     helm init -c && \
     helm plugin install https://github.com/chartmuseum/helm-push --version v0.8.1
+copy rsa.pub /etc/apk/keys/sgerrand.rsa.pub    
 run cd /tmp/ && \
         wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.31-r0/glibc-2.31-r0.apk && \
         wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.31-r0/glibc-bin-2.31-r0.apk && \
