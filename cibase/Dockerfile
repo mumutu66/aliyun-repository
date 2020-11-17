@@ -11,6 +11,7 @@ RUN apk --no-cache add \
     openssh \
     git \
     jq \
+    python3 \
     py3-pip \
     && pip install --no-cache-dir \
     docker-compose
