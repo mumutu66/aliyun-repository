@@ -13,7 +13,7 @@ RUN apk --no-cache add \
     jq \
     py-pip \
     && pip install --no-cache-dir \
-    docker-compose==1.27.4
+    docker-compose
 
 # install ant
 WORKDIR /tmp
