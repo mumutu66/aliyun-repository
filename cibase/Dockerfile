@@ -13,7 +13,7 @@ RUN apk --no-cache add \
     jq \
     python3 \
     py3-pip \
-    && pip install --no-cache-dir \
+    && pip3 install --no-cache-dir \
     docker-compose
 
 # install ant
