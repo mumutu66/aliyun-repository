@@ -41,9 +41,3 @@ RUN wget -O /usr/bin/yq \
     mv /tmp/linux-amd64/helm /usr/bin/helm && \
     helm init -c && \
     helm plugin install https://github.com/chartmuseum/helm-push --version v0.8.1
-
-
-&& apk add --no-cache \
- 
-&& pip install --no-cache-dir \
-  docker-compose==${COMPOSE_VERSION}
