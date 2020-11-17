@@ -2,7 +2,6 @@ FROM maven:3.5.2-jdk-8-alpine
 
 ENV HELM_VERSION="v2.8.2" \
     YQ_VERSION="2.1.1"
-RUN COMPOSE_VERSION="1.27.4" 
 RUN apk --no-cache add \
     docker \
     mysql-client \
@@ -14,7 +13,7 @@ RUN apk --no-cache add \
     jq \
     py-pip \
     && pip install --no-cache-dir \
-    docker-compose==${COMPOSE_VERSION}
+    docker-compose==1.27.4
 
 # install ant
 WORKDIR /tmp
