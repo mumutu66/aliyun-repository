@@ -1,6 +1,9 @@
 FROM maven:3.6.3-jdk-8
 
 
+ENV HELM_VERSION="v2.8.2" \
+    YQ_VERSION="2.1.1"
+
 run apt-get update &&\
       apt-get install -y mariadb-client && \
       apt-get install -y xmlstarlet && \
