@@ -17,7 +17,8 @@ RUN apk add --update --no-cache \
     libtool \
     tar \
     jq \
-    git
+    git \
+    mysql
 RUN pip install pymysql pyyaml && npm install -g cnpm
 RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc
 RUN chmod +x mc
