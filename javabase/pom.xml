@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.xforceplus</groupId>
-    <artifactId>phoenix-bss-app</artifactId>
+    <groupId>com.local</groupId>
+    <artifactId>local-app</artifactId>
     <version>4.0.0</version>
     <packaging>pom</packaging>
 
-    <name>phoenix-bss-app</name>
+    <name>local-app</name>
     <description>FwTest project for Spring Boot</description>
 
 
