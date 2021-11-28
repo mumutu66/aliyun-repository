@@ -117,7 +117,7 @@ cd "$BUILD_PATH"
 get_src fb92f5602cdb8d3ab1ad47dbeca151b185d62eedb67d347bbe9d79c1438c85de \
         "http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz"
 
-sed -i '3978,3986c if (dst != name->data) {  \n    *dst++ = \'.\';       \n} \nngx_strlow(dst, src, n); \ndst += n; \nsrc += n; \nn = *src++; \n' /tmp/build/nginx-1.13.12/src/core/ngx_resolver.c
+sed -i "3978,3986c if (dst != name->data) {  \n    *dst++ = '.';       \n} \nngx_strlow(dst, src, n); \ndst += n; \nsrc += n; \nn = *src++; \n" /tmp/build/nginx-1.13.12/src/core/ngx_resolver.c
 
 get_src 88e05a99a8a7419066f5ae75966fb1efc409bad4522d14986da074554ae61619 \
         "https://github.com/simpl/ngx_devel_kit/archive/v$NDK_VERSION.tar.gz"
