@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-8
+FROM maven:3.8.4-openjdk-17
 
 
 ENV HELM_VERSION="v2.8.2" \
